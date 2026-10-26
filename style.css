@@ -1,0 +1,298 @@
+/* Variáveis de Cores em Tons de Rosa */
+:root {
+    --pink-primary: #ff4d94;
+    --pink-secondary: #ff80bf;
+    --pink-light: #fff0f6;
+    --pink-lighter: #ffe6f0;
+    --pink-dark: #cc0066;
+    --pink-hover: #ff1a85;
+    --text-color: #4a2e3b;
+    --gray-light: #f5f5f7;
+    --white: #ffffff;
+    --shadow: 0 8px 24px rgba(255, 77, 148, 0.15);
+    --border-radius: 16px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #fff0f6 0%, #ffcce0 100%);
+    color: var(--text-color);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.app-container {
+    width: 100%;
+    max-width: 1200px;
+    background: var(--white);
+    border-radius: 24px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Cabeçalho */
+.app-header {
+    background: linear-gradient(135deg, var(--pink-primary), var(--pink-dark));
+    color: var(--white);
+    padding: 25px 30px;
+    text-align: center;
+}
+
+.app-header h1 {
+    font-size: 2rem;
+    margin-bottom: 5px;
+}
+
+.app-header p {
+    font-size: 1rem;
+    opacity: 0.9;
+}
+
+/* Layout Principal (Grid Responsivo) */
+.app-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    padding: 30px;
+}
+
+@media (max-width: 900px) {
+    .app-content {
+        grid-template-columns: 1fr;
+    }
+}
+
+.card {
+    background: var(--white);
+    border: 2px solid var(--pink-lighter);
+    border-radius: var(--border-radius);
+    padding: 25px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+    display: flex;
+    flex-direction: column;
+}
+
+/* Formulário de Perguntas */
+.questionnaire-card h2 {
+    color: var(--pink-dark);
+    margin-bottom: 20px;
+    font-size: 1.3rem;
+}
+
+.progress-bar-container {
+    width: 100%;
+    height: 8px;
+    background: var(--pink-lighter);
+    border-radius: 4px;
+    margin-bottom: 15px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+    background: var(--pink-primary);
+    width: 16.66%;
+    transition: width 0.3s ease;
+}
+
+.step-indicator {
+    font-size: 0.85rem;
+    color: var(--pink-secondary);
+    font-weight: 600;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.question-step {
+    display: none;
+    flex-direction: column;
+    gap: 12px;
+    animation: fadeIn 0.4s ease;
+}
+
+.question-step.active {
+    display: flex;
+}
+
+.question-step label {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-color);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.question-step label i {
+    color: var(--pink-primary);
+}
+
+.question-step input {
+    width: 100%;
+    padding: 14px 16px;
+    border: 2px solid var(--pink-secondary);
+    border-radius: 12px;
+    font-size: 1rem;
+    outline: none;
+    transition: all 0.3s;
+    background: var(--pink-light);
+    color: var(--text-color);
+}
+
+.question-step input:focus {
+    border-color: var(--pink-primary);
+    background: var(--white);
+    box-shadow: 0 0 0 4px rgba(255, 77, 148, 0.15);
+}
+
+.button-group {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+    gap: 15px;
+}
+
+.btn {
+    padding: 12px 24px;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-primary {
+    background: var(--pink-primary);
+    color: var(--white);
+    flex: 1;
+    justify-content: center;
+}
+
+.btn-primary:hover {
+    background: var(--pink-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 77, 148, 0.3);
+}
+
+.btn-secondary {
+    background: var(--pink-light);
+    color: var(--pink-dark);
+}
+
+.btn-secondary:hover {
+    background: var(--pink-lighter);
+}
+
+/* Estilização do Fluxograma */
+.flowchart-card h2 {
+    color: var(--pink-dark);
+    margin-bottom: 20px;
+    font-size: 1.3rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.flowchart-container {
+    flex: 1;
+    background: var(--pink-light);
+    border-radius: 12px;
+    padding: 20px;
+    overflow-y: auto;
+    max-height: 450px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.empty-flowchart {
+    text-align: center;
+    color: var(--pink-secondary);
+    margin: auto;
+    padding: 20px;
+}
+
+.empty-flowchart i {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+/* Nós do Fluxograma */
+.flow-node {
+    background: var(--white);
+    border: 2px solid var(--pink-primary);
+    border-radius: 14px;
+    padding: 15px 20px;
+    width: 100%;
+    max-width: 380px;
+    box-shadow: 0 4px 12px rgba(255, 77, 148, 0.1);
+    position: relative;
+    animation: slideUp 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.flow-node .node-title {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--pink-primary);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-transform: uppercase;
+}
+
+.flow-node .node-value {
+    font-size: 1.05rem;
+    color: var(--text-color);
+    font-weight: 600;
+    word-break: break-word;
+}
+
+/* Seta de Conexão do Fluxograma */
+.flow-connector {
+    width: 3px;
+    height: 25px;
+    background: var(--pink-primary);
+    position: relative;
+}
+
+.flow-connector::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 8px solid var(--pink-primary);
+}
+
+/* Animações */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}

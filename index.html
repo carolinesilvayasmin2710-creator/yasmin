@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minha Trajetória - App Interativo</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- FontAwesome para ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <div class="app-container">
+        <!-- Cabeçalho do App -->
+        <header class="app-header">
+            <h1><i class="fa-solid fa-heart"></i> Minha Trajetória</h1>
+            <p>Responda às perguntas e veja seu fluxograma em tempo real!</p>
+        </header>
+
+        <!-- Conteúdo Principal / Grid do App -->
+        <main class="app-content">
+            
+            <!-- Painel de Perguntas (Formulário Passo a Passo) -->
+            <section class="card questionnaire-card">
+                <div class="progress-bar-container">
+                    <div id="progress-bar" class="progress-bar"></div>
+                </div>
+                <div class="step-indicator">Pergunta <span id="current-step">1</span> de 6</div>
+                
+                <form id="journey-form">
+                    <!-- Pergunta 1 -->
+                    <div class="question-step active" data-step="1">
+                        <label for="q1"><i class="fa-solid fa-camera-retro"></i> Quanto tempo você é influencer?</label>
+                        <input type="text" id="q1" placeholder="Ex: 5 anos, Desde 2018..." autocomplete="off">
+                    </div>
+
+                    <!-- Pergunta 2 -->
+                    <div class="question-step" data-step="2">
+                        <label for="q2"><i class="fa-solid fa-people-arrows"></i> Quando você começou seu casal?</label>
+                        <input type="text" id="q2" placeholder="Ex: Há 3 anos, 12/06/2021..." autocomplete="off">
+                    </div>
+
+                    <!-- Pergunta 3 -->
+                    <div class="question-step" data-step="3">
+                        <label for="q3"><i class="fa-solid fa-store"></i> Quanto tempo você abriu sua marca?</label>
+                        <input type="text" id="q3" placeholder="Ex: 2 anos atrás, Em 2022..." autocomplete="off">
+                    </div>
+
+                    <!-- Pergunta 4 -->
+                    <div class="question-step" data-step="4">
+                        <label for="q4"><i class="fa-solid fa-child-reaching"></i> Quantos filhos você tem?</label>
+                        <input type="text" id="q4" placeholder="Ex: 2 filhos, Nenhum ainda..." autocomplete="off">
+                    </div>
+
+                    <!-- Pergunta 5 -->
+                    <div class="question-step" data-step="5">
+                        <label for="q5"><i class="fa-solid fa-star"></i> Quando começou sua carreira?</label>
+                        <input type="text" id="q5" placeholder="Ex: Em 2015, Desde a faculdade..." autocomplete="off">
+                    </div>
+
+                    <!-- Pergunta 6 -->
+                    <div class="question-step" data-step="6">
+                        <label for="q6"><i class="fa-solid fa-location-dot"></i> Onde você nasceu?</label>
+                        <input type="text" id="q6" placeholder="Ex: São Paulo - SP, Curitiba..." autocomplete="off">
+                    </div>
+
+                    <!-- Botões de Navegação -->
+                    <div class="button-group">
+                        <button type="button" id="prev-btn" class="btn btn-secondary" style="display: none;"><i class="fa-solid fa-arrow-left"></i> Voltar</button>
+                        <button type="button" id="next-btn" class="btn btn-primary">Próximo <i class="fa-solid fa-arrow-right"></i></button>
+                    </div>
+                </form>
+            </section>
+
+            <!-- Painel do Fluxograma Visual -->
+            <section class="card flowchart-card">
+                <h2><i class="fa-solid fa-diagram-project"></i> Fluxograma da Jornada</h2>
+                <div id="flowchart-container" class="flowchart-container">
+                    <div class="empty-flowchart">
+                        <i class="fa-solid fa-wand-magic-sparkles"></i>
+                        <p>Suas respostas aparecerão aqui em formato de fluxograma interativo e dinâmico!</p>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
